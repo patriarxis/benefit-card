@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benefit Card | FlexCar</title>
+    <meta property="og:title" content="Benefit Card | FlexCar" />
+    <link rel="icon" href="/assets/images/flexcar-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="theme-color" content="#f7f7f7" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="/">
+        <img
+          src="/assets/images/flexcar-horizontal-logo.svg"
+          alt="FlexCar"
+          class="logo"
+        />
+      </a>
+    </header>
+
+    <main>
+      <section class="scroll-story" aria-label="Benefits card story">
+        <div class="scroll-story__stage">
+          <div class="hero">
+            <div class="hero-content">
+              <div class="hero-card">
+                <p class="hero-eyebrow">
+                  <img
+                    src="/assets/images/flexcar-mark.svg"
+                    alt=""
+                    class="hero-eyebrow-mark"
+                  />
+                  <span data-content-key="hero-eyebrow"
+                    >Included for every FlexCar employee</span
+                  >
+                </p>
+
+                <h1 class="hero-title">
+                  <span class="hero-title-top" data-content-key="hero-title-top"
+                    >Save every day with the</span
+                  >
+                  <span
+                    class="hero-title-bottom"
+                    data-content-key="hero-title-bottom"
+                    >FlexCar Exclusive Benefits Card</span
+                  >
+                </h1>
+                <p class="hero-subtitle" data-content-key="hero-subtitle">
+                  One card, dozens of partner discounts — on dining, wellness,
+                  fitness, travel and everyday shopping.
+                </p>
+              </div>
+
+              <button class="cta" type="button">
+                <div class="cta-img-wrapper">
+                  <img
+                    src="/assets/images/flexcar-mark.svg"
+                    alt=""
+                    class="cta-logo"
+                  />
+                </div>
+                <span class="cta-text" data-content-key="cta-text"
+                  >Browse all discounts</span
+                >
+                <i
+                  class="ph-fill ph-arrow-right cta-arrow"
+                  aria-hidden="true"
+                ></i>
+              </button>
+
+              <ul class="hero-stats" data-hero-stats></ul>
+            </div>
+          </div>
+
+          <div class="display stroke-highlight">
+            <div class="canvas">
+              <div class="info">
+                <div class="section-info-wrapper" data-story-labels></div>
+
+                <div class="progress-bar-wrapper">
+                  <div class="progress-bar">
+                    <div class="progress"></div>
+                  </div>
+                </div>
+
+                <div class="scroll-info">
+                  <i
+                    class="ph-fill ph-mouse-simple scroll-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <p class="scroll-message" data-content-key="scroll-message">
+                    Scroll to explore
+                  </p>
+                </div>
+              </div>
+
+              <div class="intros" data-story-intros></div>
+
+              <h3 class="big-text" data-content-key="big-text">
+                Real savings, every week
+              </h3>
+
+              <img
+                src="/assets/images/cards/flexcar-card.png"
+                alt="FlexCar Exclusive Benefits Card"
+                class="card"
+              />
+
+              <div class="partner-banner">
+                <img
+                  src="/assets/images/latest-partners/banner.svg"
+                  alt=""
+                  class="partner-banner-background"
+                />
+                <div class="partner-banner-logos">
+                  <img
+                    src="/assets/images/latest-partners/partner-logo.svg"
+                    alt=""
+                    class="partner-banner-partner-logo"
+                  />
+                  <img
+                    src="/assets/images/flexcar-horizontal-logo.svg"
+                    alt="FlexCar"
+                    class="partner-banner-logo"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how" aria-labelledby="how-title">
+        <div class="how-head">
+          <h2 class="how-title" id="how-title" data-content-key="how-title">
+            How it works
+          </h2>
+          <p class="how-subtitle" data-content-key="how-subtitle">
+            Three steps between you and a cheaper weekly shop, dinner, or gym
+            membership.
+          </p>
+        </div>
+        <ol class="how-list" data-how-steps></ol>
+      </section>
+
+      <section class="listing" aria-labelledby="listing-title">
+        <div class="listing-head">
+          <h2
+            class="listing-title"
+            id="listing-title"
+            data-content-key="listing-title"
+          >
+            Discounts and benefits
+          </h2>
+          <p class="listing-subtitle" data-content-key="listing-subtitle">
+            Every FlexCar partner offer, in one place. Filter by category or
+            search for a brand.
+          </p>
+        </div>
+
+        <div class="filter-bar">
+          <div class="filter-chips" role="group" data-filter-chips></div>
+
+          <div class="filter-search">
+            <i
+              class="ph-fill ph-magnifying-glass filter-search-icon"
+              aria-hidden="true"
+            ></i>
+            <input
+              type="search"
+              class="filter-search-input"
+              data-filter-search
+              autocomplete="off"
+            />
+            <button
+              type="button"
+              class="filter-search-clear"
+              data-filter-clear
+              hidden
+            >
+              <i class="ph-bold ph-x" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <p class="filter-count" data-filter-count role="status"></p>
+
+        <ul class="listing-list"></ul>
+
+        <div class="listing-empty" data-listing-empty hidden>
+          <i class="ph-fill ph-magnifying-glass listing-empty-icon" aria-hidden="true"></i>
+          <p class="listing-empty-title" data-listing-empty-title></p>
+          <p class="listing-empty-body" data-listing-empty-body></p>
+        </div>
+      </section>
+
+      <footer class="site-footer" data-footer>
+        <div class="site-footer__inner">
+          <div class="site-footer__top">
+            <div class="site-footer__brand">
+              <img class="site-footer__logo" data-footer-logo alt="" />
+              <p class="site-footer__tagline" data-footer-tagline></p>
+            </div>
+            <nav class="site-footer__nav" aria-label="Footer">
+              <ul data-footer-nav></ul>
+            </nav>
+            <ul class="site-footer__social" data-footer-social></ul>
+          </div>
+          <div class="site-footer__bottom">
+            <p class="site-footer__contact">
+              <a data-footer-email></a>
+              <span aria-hidden="true">·</span>
+              <a data-footer-phone></a>
+            </p>
+            <p class="site-footer__legal">
+              <span data-footer-copy></span>
+              <a data-footer-privacy></a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

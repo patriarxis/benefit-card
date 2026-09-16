@@ -1,0 +1,654 @@
+{
+  "logo": "/assets/images/flexcar-horizontal-logo.svg",
+  "mark": "/assets/images/flexcar-mark.svg",
+  "card": "/assets/images/cards/flexcar-card.png",
+  "bannerBg": "/assets/images/latest-partners/banner.svg",
+  "partnerLogo": "/assets/images/latest-partners/partner-logo.svg",
+  "ui": {
+    "hero-eyebrow": "Included for every FlexCar employee",
+    "hero-title-top": "Save every day with the",
+    "hero-title-bottom": "FlexCar Exclusive Benefits Card",
+    "hero-subtitle": "One card, dozens of partner discounts — on dining, wellness, fitness, travel and everyday shopping.",
+    "cta-text": "Browse all discounts",
+    "scroll-message": "Scroll to explore",
+    "big-text": "Real savings, every week",
+    "how-title": "How it works",
+    "how-subtitle": "Three steps between you and a cheaper weekly shop, dinner, or gym membership.",
+    "listing-title": "Discounts and benefits",
+    "listing-subtitle": "Every FlexCar partner offer, in one place. Filter by category or search for a brand."
+  },
+  "heroStats": [
+    {
+      "metric": "partners",
+      "label": "Partner brands"
+    },
+    {
+      "metric": "maxDiscount",
+      "label": "Biggest discount",
+      "prefix": "-",
+      "suffix": "%"
+    },
+    {
+      "metric": "categories",
+      "label": "Categories"
+    }
+  ],
+  "storySteps": [
+    {
+      "id": "01",
+      "label": "The FlexCar Benefits Card"
+    },
+    {
+      "id": "02",
+      "label": "Unlock partner discounts",
+      "title": "Unlock partner discounts",
+      "body": "Your Exclusive Benefits Card opens up standing offers from local favourites and national brands — at no extra cost to you."
+    },
+    {
+      "id": "03",
+      "label": "Savings that fit your week",
+      "title": "Savings that fit your week",
+      "body": "Coffee on Monday, the gym on Wednesday, dinner on Friday. The card pays off on the things you already do.",
+      "showBigText": true
+    },
+    {
+      "id": "04",
+      "label": "New partner, new savings",
+      "title": "New partner\nNew savings",
+      "body": "Say hello to Lumora Wellness, our newest partner. Cardholders get -25% on spa packages from today."
+    }
+  ],
+  "howItWorks": [
+    {
+      "icon": "credit-card",
+      "step": "01",
+      "title": "Get your card",
+      "body": "Every FlexCar subscriber gets an Exclusive Benefits Card — digital, activated the moment your contract starts."
+    },
+    {
+      "icon": "hand-tap",
+      "step": "02",
+      "title": "Show it at checkout",
+      "body": "In store, mention the benefit. Online, use the partner code. No vouchers to print and nothing to claim back."
+    },
+    {
+      "icon": "seal-percent",
+      "step": "03",
+      "title": "Save on the spot",
+      "body": "The discount comes off the price there and then, as often as you like, for as long as you drive with us."
+    }
+  ],
+  "listing": {
+    "filterLabel": "Filter by category",
+    "allLabel": "All",
+    "searchLabel": "Search partners",
+    "searchPlaceholder": "Search a brand or an offer",
+    "clearLabel": "Clear search",
+    "emptyTitle": "No partners match your filters",
+    "emptyBody": "Try another category, or clear the search to see every benefit.",
+    "countOne": "1 partner",
+    "countMany": "{count} partners",
+    "benefitsOne": "1 benefit",
+    "benefitsMany": "{count} benefits"
+  },
+  "footer": {
+    "tagline": "Exclusive Benefits Card",
+    "phone": "+30 211 000 4821",
+    "email": "benefits@flexcar.demo",
+    "links": [
+      {
+        "title": "About",
+        "url": "#"
+      },
+      {
+        "title": "Careers",
+        "url": "#"
+      },
+      {
+        "title": "Help",
+        "url": "#"
+      },
+      {
+        "title": "Partners",
+        "url": "#"
+      }
+    ],
+    "social": [
+      {
+        "icon": "facebook-logo",
+        "url": "#"
+      },
+      {
+        "icon": "instagram-logo",
+        "url": "#"
+      },
+      {
+        "icon": "linkedin-logo",
+        "url": "#"
+      }
+    ],
+    "copyrights": "© FlexCar",
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "url": "#"
+    }
+  },
+  "partners": [
+    {
+      "slug": "marina-bistro",
+      "name": "Marina Bistro",
+      "logoSrc": "/assets/images/partners/logos/marina-bistro.svg",
+      "bannerSrc": "/assets/images/partners/banners/marina-bistro.svg",
+      "category": {
+        "icon": "fork-knife",
+        "title": "Dining"
+      },
+      "headlineOffer": "-15%",
+      "headlineDiscount": 15,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "Coastal-inspired bistro serving seasonal plates and weekend brunch.",
+        "descriptionExt": "Coastal-inspired bistro serving seasonal plates and weekend brunch. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "-15%",
+          "titleExt": "-15% on weekday lunch menus",
+          "description": "on weekday lunch menus",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        },
+        {
+          "title": "Free dessert",
+          "titleExt": "Complimentary dessert with any entrée",
+          "description": "with any entrée",
+          "descriptionExt": "Available Mon–Thu for cardholders."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Reserve online and mention your FlexCar Benefits Card."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    },
+    {
+      "slug": "leaf-and-grain",
+      "name": "Leaf & Grain",
+      "logoSrc": "/assets/images/partners/logos/leaf-and-grain.svg",
+      "bannerSrc": "/assets/images/partners/banners/leaf-and-grain.svg",
+      "category": {
+        "icon": "fork-knife",
+        "title": "Dining"
+      },
+      "headlineOffer": "-15%",
+      "headlineDiscount": 15,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "Fresh bowls, salads, and grain plates made with local produce.",
+        "descriptionExt": "Fresh bowls, salads, and grain plates made with local produce. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "-15%",
+          "titleExt": "-15% on bowls & salads",
+          "description": "on bowls & salads",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Show your FlexCar Benefits Card before ordering."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    },
+    {
+      "slug": "oak-brew",
+      "name": "Oak & Brew",
+      "logoSrc": "/assets/images/partners/logos/oak-brew.svg",
+      "bannerSrc": "/assets/images/partners/banners/oak-brew.svg",
+      "category": {
+        "icon": "coffee",
+        "title": "Café & Wine"
+      },
+      "headlineOffer": "-20%",
+      "headlineDiscount": 20,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "A neighborhood café roasting single-origin beans and baking fresh pastries daily.",
+        "descriptionExt": "A neighborhood café roasting single-origin beans and baking fresh pastries daily. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "-20%",
+          "titleExt": "-20% on drinks & pastries",
+          "description": "on drinks & pastries",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Show your FlexCar Benefits Card at checkout."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    },
+    {
+      "slug": "vineyard-lane",
+      "name": "Vineyard Lane",
+      "logoSrc": "/assets/images/partners/logos/vineyard-lane.svg",
+      "bannerSrc": "/assets/images/partners/banners/vineyard-lane.svg",
+      "category": {
+        "icon": "coffee",
+        "title": "Café & Wine"
+      },
+      "headlineOffer": "-10%",
+      "headlineDiscount": 10,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "Guided tastings and curated bottles from independent vineyards.",
+        "descriptionExt": "Guided tastings and curated bottles from independent vineyards. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "-10%",
+          "titleExt": "-10% on tasting experiences",
+          "description": "on tasting experiences",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Book online using your member email."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    },
+    {
+      "slug": "lumora",
+      "name": "Lumora Wellness",
+      "logoSrc": "/assets/images/partners/logos/lumora.svg",
+      "bannerSrc": "/assets/images/partners/banners/lumora.svg",
+      "category": {
+        "icon": "flower-lotus",
+        "title": "Wellness"
+      },
+      "headlineOffer": "-25%",
+      "headlineDiscount": 25,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "Lumora offers massage, skincare, and recovery treatments in a calm urban spa.",
+        "descriptionExt": "Lumora offers massage, skincare, and recovery treatments in a calm urban spa. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "-25%",
+          "titleExt": "-25% on spa packages",
+          "description": "on spa packages",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Book via the partner site with code FLEXCAR."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    },
+    {
+      "slug": "aurora-dental",
+      "name": "Aurora Dental",
+      "logoSrc": "/assets/images/partners/logos/aurora-dental.svg",
+      "bannerSrc": "/assets/images/partners/banners/aurora-dental.svg",
+      "category": {
+        "icon": "flower-lotus",
+        "title": "Wellness"
+      },
+      "headlineOffer": "-20%",
+      "headlineDiscount": 20,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "Preventive dentistry and cosmetic treatments with same-week appointments.",
+        "descriptionExt": "Preventive dentistry and cosmetic treatments with same-week appointments. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "-20%",
+          "titleExt": "-20% on cleanings & whitening",
+          "description": "on cleanings & whitening",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Mention the FlexCar benefit when you book your appointment."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    },
+    {
+      "slug": "pulse-gym",
+      "name": "Pulse Gym",
+      "logoSrc": "/assets/images/partners/logos/pulse-gym.svg",
+      "bannerSrc": "/assets/images/partners/banners/pulse-gym.svg",
+      "category": {
+        "icon": "barbell",
+        "title": "Fitness"
+      },
+      "headlineOffer": "1 month free",
+      "headlineDiscount": null,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "Modern gym with strength floors, classes, and recovery zones.",
+        "descriptionExt": "Modern gym with strength floors, classes, and recovery zones. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "1 month free",
+          "titleExt": "1 month free when you join annually",
+          "description": "when you join annually",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        },
+        {
+          "title": "-10%",
+          "titleExt": "-10% on merch & accessories",
+          "description": "on merch",
+          "descriptionExt": "In-club retail only."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Visit any location with your card and photo ID."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    },
+    {
+      "slug": "cadence-studio",
+      "name": "Cadence Studio",
+      "logoSrc": "/assets/images/partners/logos/cadence-studio.svg",
+      "bannerSrc": "/assets/images/partners/banners/cadence-studio.svg",
+      "category": {
+        "icon": "barbell",
+        "title": "Fitness"
+      },
+      "headlineOffer": "-30%",
+      "headlineDiscount": 30,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "Boutique cycling and pilates studio with small-group coaching.",
+        "descriptionExt": "Boutique cycling and pilates studio with small-group coaching. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "-30%",
+          "titleExt": "-30% on class packs",
+          "description": "on class packs",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Apply the benefit at checkout in the studio app."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    },
+    {
+      "slug": "northmarket",
+      "name": "North Market",
+      "logoSrc": "/assets/images/partners/logos/northmarket.svg",
+      "bannerSrc": "/assets/images/partners/banners/northmarket.svg",
+      "category": {
+        "icon": "shopping-bag",
+        "title": "Retail"
+      },
+      "headlineOffer": "-10%",
+      "headlineDiscount": 10,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "Curated lifestyle retail for home, apparel, and everyday essentials.",
+        "descriptionExt": "Curated lifestyle retail for home, apparel, and everyday essentials. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "-10%",
+          "titleExt": "-10% on full-price items",
+          "description": "on full-price items",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Scan your digital card at the point of sale."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    },
+    {
+      "slug": "clearvue",
+      "name": "ClearVue Optics",
+      "logoSrc": "/assets/images/partners/logos/clearvue.svg",
+      "bannerSrc": "/assets/images/partners/banners/clearvue.svg",
+      "category": {
+        "icon": "shopping-bag",
+        "title": "Retail"
+      },
+      "headlineOffer": "-20%",
+      "headlineDiscount": 20,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "ClearVue Optics provides designer frames and precision lens fitting.",
+        "descriptionExt": "ClearVue Optics provides designer frames and precision lens fitting. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "-20%",
+          "titleExt": "-20% on frames & lenses",
+          "description": "on frames & lenses",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Present your FlexCar Benefits Card in-store."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    },
+    {
+      "slug": "harbor-suites",
+      "name": "Harbor Suites",
+      "logoSrc": "/assets/images/partners/logos/harbor-suites.svg",
+      "bannerSrc": "/assets/images/partners/banners/harbor-suites.svg",
+      "category": {
+        "icon": "suitcase-rolling",
+        "title": "Travel"
+      },
+      "headlineOffer": "-12%",
+      "headlineDiscount": 12,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "Boutique city suites with flexible check-in and workspace lounges.",
+        "descriptionExt": "Boutique city suites with flexible check-in and workspace lounges. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "-12%",
+          "titleExt": "-12% on weekend stays",
+          "description": "on weekend stays",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Use promo code FLEXSTAY when booking."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    },
+    {
+      "slug": "coastline-escapes",
+      "name": "Coastline Escapes",
+      "logoSrc": "/assets/images/partners/logos/coastline-escapes.svg",
+      "bannerSrc": "/assets/images/partners/banners/coastline-escapes.svg",
+      "category": {
+        "icon": "suitcase-rolling",
+        "title": "Travel"
+      },
+      "headlineOffer": "-18%",
+      "headlineDiscount": 18,
+      "links": [
+        {
+          "icon": "globe",
+          "text": "Website",
+          "url": "#"
+        }
+      ],
+      "body": {
+        "label": "About",
+        "description": "Short-haul coastal trips, ferry packages, and off-season escapes.",
+        "descriptionExt": "Short-haul coastal trips, ferry packages, and off-season escapes. FlexCar cardholders get this partner rate all year round — no vouchers, no minimum spend."
+      },
+      "offersLabel": "What you save",
+      "offers": [
+        {
+          "title": "-18%",
+          "titleExt": "-18% on island getaways",
+          "description": "on island getaways",
+          "descriptionExt": "Available to active FlexCar Benefits Card holders. Terms may apply."
+        }
+      ],
+      "disclaimer": "Demo offer for illustration only. Not a real promotion.",
+      "process": {
+        "label": "How to redeem",
+        "description": "Book through the partner site with your member email."
+      },
+      "button": {
+        "text": "See the offer",
+        "info": "Full terms inside"
+      }
+    }
+  ]
+}

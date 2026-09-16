@@ -1,0 +1,20 @@
+{
+  "name": "flexcar-benefit-card",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "generate:content": "node scripts/generate-translations.mjs",
+    "generate:assets": "node scripts/generate-demo-assets.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/web": "^2.1.2",
+    "gsap": "^3.12.7"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}

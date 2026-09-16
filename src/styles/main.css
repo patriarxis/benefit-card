@@ -1,0 +1,1626 @@
+:root {
+  font-family: "Ubuntu", "Open Sans", system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* FlexCar brand palette */
+  --red-1: #e90037;
+  --red-2: #b72026;
+  --teal: #b0c7c6;
+
+  --grey-5: #292929;
+  --grey-4: #464342;
+  --grey-3: #787a7a;
+  --grey-2: #b5b3b3;
+  --grey-1: #e7e7e7;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --accent: var(--red-1);
+  --accent-dark: var(--red-2);
+  --surface: #ffffff;
+  --page-bg: #f7f7f7;
+  --text-color: var(--grey-4);
+  --border: var(--grey-2);
+  --on-accent: #ffffff;
+  --panel-bg: var(--grey-5);
+  --panel-fg: #ffffff;
+
+  --anim200: all 0.2s ease-in-out;
+  --bg-anim200: background 0.2s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--page-bg);
+  font-size: clamp(12px, 1.4vw, 16px);
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-color);
+  font-family: "Ubuntu", "Open Sans", system-ui, sans-serif;
+  background-color: transparent;
+}
+
+::selection {
+  background-color: var(--red-1);
+  color: var(--white);
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--red-1);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--grey-5);
+}
+
+main {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1920px;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--anim200);
+}
+
+img {
+  display: block;
+}
+
+.stroke-highlight {
+  position: relative;
+}
+
+.stroke-highlight::before {
+  background: linear-gradient(
+    180deg,
+    var(--grey-2) 0,
+    var(--grey-3) 30%,
+    var(--surface) 70%,
+    var(--grey-3)
+  );
+  border-radius: inherit;
+  content: '';
+  height: calc(100% + 2px);
+  left: -1px;
+  position: absolute;
+  top: -1px;
+  width: calc(100% + 2px);
+  z-index: -1;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/* ---- Modal ---- */
+
+.backdrop {
+  animation: fade-in 0.2s ease;
+  backdrop-filter: blur(8px);
+  background-color: rgba(20, 16, 16, 0.48);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.modal-container {
+  align-items: center;
+  animation: modal-rise 0.28s ease;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  padding: 1.5rem 1rem;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 200;
+}
+
+.modal {
+  background-color: var(--surface);
+  border: 1px solid var(--grey-1);
+  border-radius: 1.25rem;
+  box-shadow: 0 24px 64px -24px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  max-height: min(42rem, calc(100dvh - 3rem));
+  max-width: 36rem;
+  overflow: hidden;
+  pointer-events: all;
+  position: relative;
+  width: 100%;
+}
+
+.close-modal-btn {
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  backdrop-filter: blur(10px);
+  background-color: color-mix(in srgb, var(--white) 86%, transparent);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px -10px rgba(0, 0, 0, 0.4);
+  color: var(--grey-5);
+  display: inline-flex;
+  height: 2.35rem;
+  justify-content: center;
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  transition: var(--bg-anim200), color 0.2s ease-in-out;
+  width: 2.35rem;
+  z-index: 2;
+}
+
+.close-modal-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.close-modal-btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.close-modal-btn:active {
+  transform: scale(0.96);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop,
+  .modal-container {
+    animation: none;
+  }
+}
+
+/* ---- Header ---- */
+
+header {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  left: 0;
+  padding: 2rem 4rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.header-actions {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.logo {
+  height: 2rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Several components below set an explicit `display`, which otherwise wins over the
+   user-agent rule for [hidden] and leaves toggled-off elements on screen. */
+[hidden] {
+  display: none !important;
+}
+
+/* ---- Scroll experience ---- */
+
+.scroll-story {
+  position: relative;
+  width: 100%;
+}
+
+.scroll-story__stage {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+/*
+ * Reduced motion: no pin, no tweens. The stage becomes an ordinary document-flow
+ * block so every story step's copy stays readable at once, instead of the four
+ * absolutely-positioned intros stacking on top of each other.
+ */
+.scroll-story__stage.is-reduced-motion {
+  height: auto;
+  justify-content: flex-start;
+  overflow: visible;
+  padding: 7rem 1rem 1rem;
+}
+
+.is-reduced-motion .hero {
+  padding: 0 1.5rem 3rem;
+  position: static;
+}
+
+.is-reduced-motion .display {
+  height: auto;
+  max-height: none;
+  will-change: auto;
+}
+
+.is-reduced-motion .canvas {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow: visible;
+}
+
+.is-reduced-motion .info,
+.is-reduced-motion .big-text,
+.is-reduced-motion .partner-banner {
+  display: none;
+}
+
+.is-reduced-motion .card {
+  bottom: auto;
+  height: auto;
+  margin: 2.5rem auto 0;
+  order: -1;
+  position: static;
+  right: auto;
+  width: min(320px, 70%);
+}
+
+.is-reduced-motion .intros {
+  display: grid;
+  gap: 2rem;
+  padding: 2.5rem;
+  position: static;
+}
+
+.is-reduced-motion .intro {
+  max-width: none;
+  opacity: 1;
+  position: static;
+  visibility: visible;
+}
+
+/* Bottom is held clear of the resting panel (38% of the stage) so the hero copy
+   centres in the space above it instead of over the card. */
+.hero {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  inset: 0 0 38% 0;
+  justify-content: center;
+  padding: 5rem 1.5rem 1rem;
+  pointer-events: none;
+  position: absolute;
+  z-index: 20;
+}
+
+.hero .cta {
+  pointer-events: auto;
+}
+
+.hero-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.hero-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 800px;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  align-items: center;
+  background-color: color-mix(in srgb, var(--surface) 80%, transparent);
+  border: 1px solid var(--grey-1);
+  border-radius: 999px;
+  color: var(--grey-4);
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 500;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.65rem;
+}
+
+.hero-eyebrow-mark {
+  height: 0.9rem;
+}
+
+.hero-title {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title > * {
+  display: block;
+}
+
+.hero-title-top {
+  font-size: 2rem;
+}
+
+.hero-title-bottom {
+  font-size: 4rem;
+}
+
+.hero-subtitle {
+  color: var(--grey-4);
+  font-size: 1rem;
+}
+
+.cta {
+  align-items: center;
+  background-color: var(--red-1);
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 1rem;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+}
+
+.cta:hover {
+  background-color: var(--red-2);
+}
+
+.cta-img-wrapper {
+  align-items: center;
+  background-color: var(--surface);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 3rem;
+  justify-content: center;
+  width: 3rem;
+}
+
+.cta-logo {
+  height: 1.5rem;
+}
+
+.cta-text {
+  color: var(--on-accent);
+  font-size: 1rem;
+}
+
+.cta-arrow {
+  color: var(--on-accent);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+/* Values are filled in from the partner data by renderHeroStats(). */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.hero-stat {
+  align-items: center;
+  background-color: color-mix(in srgb, var(--surface) 80%, transparent);
+  border: 1px solid var(--grey-1);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 7.5rem;
+  padding: 0.7rem 1.25rem;
+}
+
+.hero-stat-value {
+  color: var(--red-1);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.hero-stat-label {
+  color: var(--grey-3);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* No background or border here: `.stroke-highlight::before` sits at z-index -1, which
+   paints above this element's own background, so the surface lives on `.canvas` and
+   the gradient ring is left showing only as the 1px outer edge it was meant to be. */
+.display {
+  border-radius: 2rem;
+  flex-shrink: 0;
+  height: 38%;
+  max-height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  /* The step tweens animate this, which reflows; warn the compositor up front. */
+  will-change: height;
+  z-index: 10;
+}
+
+.canvas {
+  background: linear-gradient(135deg, var(--white), var(--grey-1));
+  border-radius: inherit;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.info {
+  align-items: flex-start;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  left: 0;
+  padding: 1.5rem;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+
+.section-info-wrapper {
+  min-height: 1.5rem;
+  position: relative;
+  width: min(100%, 28rem);
+}
+
+.section-info {
+  align-items: center;
+  color: var(--grey-4);
+  display: inline-flex;
+  gap: 0.5rem;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  z-index: 10;
+}
+
+.section-info-1 {
+  opacity: 1;
+  visibility: visible;
+}
+
+.section-number {
+  font-size: 0.8rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 500;
+  text-wrap: nowrap;
+}
+
+.progress-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.progress-bar {
+  background-color: var(--grey-2);
+  border-radius: 99px;
+  height: 100%;
+  max-height: 200px;
+  overflow: hidden;
+  width: 2px;
+}
+
+.progress {
+  background-color: var(--red-1);
+  border-radius: 99px;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: top center;
+  width: 100%;
+  will-change: transform;
+}
+
+.scroll-info {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.scroll-message {
+  color: var(--grey-4);
+  font-size: 0.825rem;
+}
+
+.intros {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 4;
+}
+
+/*
+ * Placement is keyed to the story step index (`.intro-N` comes from the step's
+ * position in content.storySteps). These rules are the default for any step, so a
+ * newly added step lands somewhere sensible rather than unpositioned.
+ */
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  left: 12%;
+  max-width: 30rem;
+  opacity: 0;
+  position: absolute;
+  right: 12%;
+  top: 18%;
+  visibility: hidden;
+  white-space: pre-line;
+  z-index: 4;
+}
+
+/* Centred above the front-on card, which fills the middle of the panel at this step. */
+.intro-2 {
+  align-items: center;
+  left: 1rem;
+  margin: auto;
+  right: 1rem;
+  text-align: center;
+  top: 10%;
+}
+
+/* Right-hand panel, beside the exiting card. */
+.intro-3 {
+  bottom: 0;
+  justify-content: center;
+  left: auto;
+  padding: 2rem;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+/* Sits as a caption along the bottom of the panel; the step that shows it lifts the
+   card clear so the two never stack. */
+.big-text {
+  bottom: 8%;
+  color: var(--grey-3);
+  font-size: clamp(1rem, 4vw, 3rem);
+  left: 1rem;
+  opacity: 0;
+  position: absolute;
+  right: 1rem;
+  text-align: center;
+  visibility: hidden;
+  z-index: 3;
+}
+
+.intro-title {
+  font-size: 2.5rem;
+}
+
+/*
+ * Closing beat: the red partner banner slides in behind the panel, so everything
+ * layered on top of it has to invert. Toggled by the beat's `banner` flag.
+ */
+.canvas.is-banner .section-number,
+.canvas.is-banner .section-title,
+.canvas.is-banner .intro-title,
+.canvas.is-banner .intro-description,
+.canvas.is-banner .scroll-message {
+  color: var(--white);
+}
+
+.canvas.is-banner .intro-title {
+  font-size: 2rem;
+}
+
+.intro-description {
+  color: var(--grey-4);
+  font-size: 1rem;
+}
+
+/* GSAP owns the transform outright — see BEATS in presentation.js. Setting one here
+   too gave the same matrix two sources of truth. */
+.card {
+  bottom: 12%;
+  /* The 140px floor only bites below ~700px wide, where 20vw left the card too small
+     to be the subject of its own step; desktop sizing is unchanged. */
+  height: clamp(140px, 20vw, 300px);
+  position: absolute;
+  right: 8%;
+  transform-origin: center center;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 2;
+}
+
+.partner-banner {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+}
+
+.partner-banner,
+.partner-banner-background {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.partner-banner-background {
+  object-fit: cover;
+  right: 0;
+}
+
+.partner-banner-logos {
+  align-items: center;
+  bottom: 2rem;
+  display: inline-flex;
+  gap: 1rem;
+  left: 2rem;
+  position: absolute;
+  z-index: 1;
+}
+
+.partner-banner-logo {
+  /* The FlexCar logo is brand red, and so is the banner behind it. */
+  filter: brightness(0) invert(100%);
+  height: 2rem;
+}
+
+.partner-banner-partner-logo {
+  border-radius: 0.75rem;
+  height: 4rem;
+  object-fit: cover;
+  width: 4rem;
+}
+
+/* ---- How it works ---- */
+
+.how {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 6rem 2rem 2rem;
+  position: relative;
+  z-index: 80;
+}
+
+.how-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 640px;
+}
+
+.how-title {
+  font-size: 2.5rem;
+}
+
+.how-subtitle {
+  color: var(--grey-3);
+  font-size: 1rem;
+}
+
+.how-list {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.how-step {
+  background-color: var(--surface);
+  border: 1px solid var(--grey-1);
+  border-radius: 1.25rem;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: auto 1fr;
+  padding: 1.75rem;
+}
+
+.how-step-icon {
+  align-items: center;
+  background-color: var(--red-1);
+  border-radius: 0.9rem;
+  color: var(--white);
+  display: inline-flex;
+  grid-row: span 2;
+  height: 3rem;
+  justify-content: center;
+  margin-right: 1rem;
+  width: 3rem;
+}
+
+.how-step-glyph {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.how-step-index {
+  align-self: end;
+  color: var(--grey-2);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.how-step-title {
+  font-size: 1.25rem;
+}
+
+.how-step-body {
+  color: var(--grey-4);
+  font-size: 0.9rem;
+  grid-column: 2;
+  margin-top: 0.35rem;
+}
+
+/* ---- Partners listing ---- */
+
+.listing {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: auto;
+  max-width: 1400px;
+  padding: 4rem 2rem 4rem;
+  position: relative;
+  z-index: 80;
+}
+
+.listing-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 640px;
+}
+
+.listing-title {
+  font-size: 3rem;
+}
+
+.listing-subtitle {
+  color: var(--grey-3);
+  font-size: 1rem;
+}
+
+/* ---- Filter bar ---- */
+
+.filter-bar {
+  align-items: center;
+  /* The header is tweened out of the way for the rest of the page, so the filter
+     bar is the only sticky chrome here and can sit flush at the top. */
+  background-color: color-mix(in srgb, var(--page-bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--grey-1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding: 0.85rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-chip {
+  align-items: center;
+  background-color: var(--surface);
+  border: 1px solid var(--grey-1);
+  border-radius: 999px;
+  color: var(--grey-4);
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.85rem;
+  gap: 0.45rem;
+  padding: 0.45rem 0.6rem 0.45rem 0.9rem;
+}
+
+.filter-chip:hover {
+  border-color: var(--grey-2);
+  color: var(--grey-5);
+}
+
+.filter-chip-count {
+  background-color: var(--grey-1);
+  border-radius: 999px;
+  color: var(--grey-3);
+  font-size: 0.7rem;
+  font-weight: 700;
+  min-width: 1.5rem;
+  padding: 0.1rem 0.4rem;
+  text-align: center;
+}
+
+.filter-chip[aria-pressed='true'] {
+  background-color: var(--red-1);
+  border-color: var(--red-1);
+  color: var(--on-accent);
+}
+
+.filter-chip[aria-pressed='true'] .filter-chip-count {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: var(--on-accent);
+}
+
+.filter-search {
+  align-items: center;
+  background-color: var(--surface);
+  border: 1px solid var(--grey-1);
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 0.5rem;
+  min-width: min(100%, 18rem);
+  padding: 0.45rem 0.6rem 0.45rem 0.9rem;
+}
+
+.filter-search:focus-within {
+  border-color: var(--red-1);
+}
+
+.filter-search-icon {
+  color: var(--grey-3);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.filter-search-input {
+  background: none;
+  border: none;
+  color: var(--grey-5);
+  flex-grow: 1;
+  font-family: inherit;
+  font-size: 0.9rem;
+  min-width: 0;
+  outline: none;
+}
+
+.filter-search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.filter-search-clear {
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  background-color: var(--grey-1);
+  border-radius: 50%;
+  color: var(--grey-4);
+  display: inline-flex;
+  height: 1.5rem;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+.filter-search-clear:hover {
+  background-color: var(--grey-2);
+  color: var(--grey-5);
+}
+
+.filter-count {
+  color: var(--grey-3);
+  font-size: 0.85rem;
+}
+
+/* ---- Partner cards ---- */
+
+.listing-list {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+/*
+ * The whole card is one `<button>`: a single tab stop and a single click target,
+ * rather than a clickable div wrapping a second, separate button.
+ */
+.partner-card {
+  background-color: var(--surface);
+  border: 1px solid var(--grey-1);
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  gap: 1.25rem;
+  height: 100%;
+  padding: 1.25rem;
+  text-align: left;
+  transition: var(--anim200);
+  width: 100%;
+}
+
+.partner-card:hover {
+  border-color: var(--grey-2);
+  box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+}
+
+.partner-card:active {
+  transform: translateY(-2px) scale(0.995);
+}
+
+.partner-card-head {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.partner-logo-tile {
+  background-color: var(--grey-1);
+  border: 1px solid var(--grey-1);
+  border-radius: 1rem;
+  display: block;
+  flex-shrink: 0;
+  height: 4.5rem;
+  overflow: hidden;
+  width: 4.5rem;
+}
+
+.partner-logo {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.partner-headline {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.partner-discount {
+  color: var(--red-1);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.partner-discount-note {
+  color: var(--grey-3);
+  font-size: 0.8rem;
+}
+
+.partner-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 0.35rem;
+}
+
+.partner-name {
+  color: var(--grey-5);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.partner-category {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.partner-category-icon {
+  color: var(--accent);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.partner-category-title {
+  color: var(--grey-3);
+  font-size: 0.875rem;
+}
+
+.partner-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: var(--grey-4);
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  overflow: hidden;
+  white-space: pre-line;
+}
+
+/* ---- Empty filter result ---- */
+
+.listing-empty {
+  align-items: center;
+  background-color: var(--surface);
+  border: 1px dashed var(--grey-2);
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.listing-empty-icon {
+  color: var(--grey-2);
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.listing-empty-title {
+  color: var(--grey-5);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.listing-empty-body {
+  color: var(--grey-3);
+  font-size: 0.9rem;
+  max-width: 28rem;
+}
+
+/* ---- Partner modal ---- */
+
+.partner-modal {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+}
+
+.partner-modal-hero {
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.partner-modal-banner {
+  display: block;
+  height: 7.25rem;
+  object-fit: cover;
+  object-position: 100% 0;
+  width: 100%;
+}
+
+.partner-modal-identity {
+  align-items: center;
+  display: grid;
+  gap: 0.85rem 1rem;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  padding: 1.15rem 1.5rem 0;
+}
+
+.partner-logo-tile--modal {
+  height: 4.25rem;
+  width: 4.25rem;
+}
+
+.partner-modal-identity-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.partner-modal-name {
+  color: var(--grey-5);
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.partner-discount--modal {
+  font-size: 1.45rem;
+  line-height: 1.1;
+  text-align: right;
+}
+
+.partner-modal-meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.85rem;
+}
+
+.partner-modal-link {
+  align-items: center;
+  color: var(--red-1);
+  display: inline-flex;
+  font-size: 0.85rem;
+  font-weight: 500;
+  gap: 0.35rem;
+}
+
+.partner-modal-link:hover {
+  color: var(--red-2);
+}
+
+.partner-modal-link-text {
+  font-size: inherit;
+}
+
+.partner-modal-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1.25rem;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1.15rem 1.5rem 1.35rem;
+}
+
+.partner-modal-lead {
+  color: var(--grey-4);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.partner-modal-offers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.partner-modal-kicker {
+  color: var(--grey-3);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.partner-modal-offers-list {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+}
+
+.partner-modal-offer {
+  background-color: var(--page-bg);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.05rem 1.05rem;
+}
+
+.partner-modal-offer-value {
+  color: var(--red-1);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.partner-modal-offer-name {
+  color: var(--grey-5);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.partner-modal-offer-description {
+  color: var(--grey-3);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-top: 0.2rem;
+}
+
+.partner-modal-redeem {
+  align-items: flex-start;
+  background-color: color-mix(in srgb, var(--red-1) 8%, var(--white));
+  border-top: 1px solid color-mix(in srgb, var(--red-1) 18%, var(--grey-1));
+  color: var(--grey-5);
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.9rem;
+  padding: 1.05rem 1.5rem 1.2rem;
+}
+
+.partner-modal-redeem-icon {
+  align-items: center;
+  background-color: var(--red-1);
+  border-radius: 0.8rem;
+  color: var(--white);
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 2.5rem;
+  justify-content: center;
+  width: 2.5rem;
+}
+
+.partner-modal-redeem-glyph {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.partner-modal-redeem-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+  padding-top: 0.1rem;
+}
+
+.partner-modal-redeem-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.partner-modal-redeem-description {
+  color: var(--grey-4);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+/* ---- Footer ---- */
+
+.site-footer {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+  padding: 2.25rem 2rem 1.75rem;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.site-footer__top {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-right: auto;
+}
+
+.site-footer__logo {
+  height: 1.5rem;
+}
+
+.site-footer__tagline {
+  color: var(--grey-3);
+  font-size: 0.85rem;
+}
+
+.site-footer__nav ul,
+.site-footer__social,
+.site-footer__contact,
+.site-footer__legal {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-footer__nav ul {
+  gap: 1.5rem;
+}
+
+.site-footer__nav a {
+  color: var(--grey-4);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.site-footer__nav a:hover,
+.site-footer__contact a:hover,
+.site-footer__legal a:hover {
+  color: var(--red-1);
+}
+
+.site-footer__social {
+  gap: 0.15rem;
+}
+
+.site-footer__social a {
+  align-items: center;
+  color: var(--grey-3);
+  display: inline-flex;
+  height: 2.25rem;
+  justify-content: center;
+  transition: color 0.2s ease;
+  width: 2.25rem;
+}
+
+.site-footer__social a:hover {
+  color: var(--grey-5);
+}
+
+.site-footer__social-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.site-footer__bottom {
+  align-items: center;
+  border-top: 1px solid var(--grey-1);
+  color: var(--grey-3);
+  display: flex;
+  font-size: 0.85rem;
+  gap: 1.5rem;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+}
+
+.site-footer__contact {
+  gap: 0.6rem;
+}
+
+.site-footer__legal {
+  gap: 1.25rem;
+}
+
+.partner-modal-link-icon {
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.scroll-icon {
+  color: var(--grey-4);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+
+@media (max-width: 1024px) {
+  header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /* The right-hand panel layout has no room here, and it collided with the banner
+     logos. Stack the closing copy under the step label instead. */
+  .intro-3 {
+    bottom: auto;
+    left: 1.5rem;
+    padding: 0;
+    right: 1.5rem;
+    top: 3.5rem;
+  }
+
+  .partner-banner-logos {
+    bottom: 1.5rem;
+    gap: 0.75rem;
+    left: 1.5rem;
+  }
+
+  .partner-banner-partner-logo {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .site-footer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .how {
+    gap: 2rem;
+    padding: 4rem 1.5rem 1.5rem;
+  }
+
+  .how-title {
+    font-size: 2rem;
+  }
+
+  .listing {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .listing-title {
+    font-size: 2.25rem;
+  }
+
+  .listing-list {
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  }
+
+  .hero-title-bottom {
+    font-size: 2.5rem;
+  }
+
+  .hero-stat {
+    min-width: 6rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .hero-stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .how {
+    padding: 3rem 1rem 1rem;
+  }
+
+  .how-step {
+    padding: 1.25rem;
+  }
+
+  .listing {
+    padding: 2.5rem 1rem 4rem;
+  }
+
+  /* One card per row: the two-column grid clipped the discount badge. */
+  .listing-list {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-bar {
+    gap: 0.75rem;
+  }
+
+  .filter-search {
+    min-width: 100%;
+  }
+
+  .modal-container {
+    padding: 0;
+  }
+
+  .modal {
+    border-radius: 0;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .partner-modal {
+    flex-grow: 1;
+    height: 100%;
+  }
+
+  .partner-modal-banner {
+    height: 7.5rem;
+  }
+
+  .partner-modal-identity {
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 1rem 1.15rem 0;
+  }
+
+  .partner-discount--modal {
+    font-size: 1.25rem;
+    grid-column: 2;
+    justify-self: start;
+    max-width: none;
+    text-align: left;
+  }
+
+  .partner-modal-body {
+    padding: 1rem 1.15rem 1.15rem;
+  }
+
+  .partner-modal-redeem {
+    padding: 1rem 1.15rem 1.25rem;
+  }
+
+  .site-footer {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .site-footer__top,
+  .site-footer__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .site-footer__nav ul {
+    gap: 1rem 1.25rem;
+  }
+
+  .hero-title-bottom {
+    font-size: 2rem;
+  }
+}
